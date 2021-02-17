@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group>
+        <item android:id="@+id/navContactUs"
+            style="@style/regular"
+            android:title="Contact Us"/>
+
+        <item android:id="@+id/navAboutUs"
+            style="@style/regular"
+            android:title="About Us" />
+
+        <item android:id="@+id/navPrivacy"
+            style="@style/regular"
+            android:title="Privacy Policy" />
+
+        <item android:id="@+id/navLogOut"
+            style="@style/regular"
+            android:title="Logout" />
+    </group>
+
+
+</menu>

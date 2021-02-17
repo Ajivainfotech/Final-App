@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">HagglerPlanet</string>
+    <string name="forgotDesp">Please enter your E-mail address to reset your password.</string>
+    <string name="enterEmail">Enter email</string>
+    <string name="submit">Submit</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="dummy_text">Lorem is simply dummy text of the printing and typesetting industry</string>
+    <string name="no_items_listed_here_yet_try_other_category">No items listed here yet.</string>
+    <string name="enter_the_fname">Enter The Name</string>
+    <string name="enter_the_email">Enter the Email</string>
+    <string name="enter_the_mnumber">Enter the Mobile Number</string>
+    <string name="enter_the_valid_password">Enter the Valid Password</string>
+    <string name="pls_check_t_c">Please check Term &amp; Condition</string>
+    <string name="valid_otp_password">"Enter Valid Otp "</string>
+    <string name="your_account_register_successfully">Your Account Login Successfully</string>
+    <string name="we_cannt_process_ur_request">We Cann\'t Process Your Request.</string>
+    <string name="enter_the_valid_gendar">Enter the Valid Gendar</string>
+    <string name="enter_the_valid_dob">Enter the valid Date of Birth</string>
+    <string name="enter_the_valid_location">Enter the Valid Location</string>
+    <string name="connection_timeout">Connection Timeout</string>
+    <string name="retry">Retry</string>
+    <string name="cancell">Cancel</string>
+
+
+    <string-array name="contactUsQueries">
+        <item>Reason for contacting us</item>
+        <item>Suggest a feature / improvement</item>
+        <item>Report a bug</item>
+        <item>Report abuse / harmful behavior</item>
+        <item>Something else</item>
+    </string-array>
+</resources>

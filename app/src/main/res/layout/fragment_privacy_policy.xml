@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="privacyPolicyVM"
+            type="com.example.haggerplanet.views.privacyPolicy.PrivacyPolicyVM" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg"
+        android:orientation="vertical">
+
+        <WebView
+            android:layout_width="match_parent"
+            android:id="@+id/webview"
+            android:layout_marginTop="2dp"
+            android:layout_height="match_parent">
+
+        </WebView>
+
+
+    </LinearLayout>
+</layout>
+

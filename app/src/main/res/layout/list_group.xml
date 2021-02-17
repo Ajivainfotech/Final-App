@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/listTitle"
+        android:layout_width="fill_parent"
+        style="@style/regular"
+        android:textAllCaps="false"
+        android:textSize="@dimen/_13sdp"
+        android:layout_height="wrap_content"
+        android:text="Woemn"
+        android:textColor="@android:color/white"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp" />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:background="@drawable/blue_trasparent"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:layout_height="1dp">
+
+    </View>
+
+
+</LinearLayout>

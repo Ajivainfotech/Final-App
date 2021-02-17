@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="4dp"
+    android:layout_marginEnd="8dp"
+    android:layout_margin="@dimen/_2sdp"
+    android:layout_marginBottom="4dp">
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:orientation="vertical"
+      android:layout_height="wrap_content">
+
+      <RelativeLayout
+          android:id="@+id/rlMessage"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:background="@drawable/blue_trasparent">
+
+          <TextView
+              android:id="@+id/txtUserName"
+              style="@style/bold"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:ellipsize="end"
+              android:maxWidth="150dp"
+              android:maxLines="1"
+              android:paddingStart="8dp"
+              android:paddingTop="4sp"
+              android:paddingEnd="8dp"
+              android:text="userName"
+              android:textColor="@color/white"
+              android:textSize="12sp"
+              android:visibility="gone" />
+
+          <TextView
+              android:id="@+id/txtMess"
+              style="@style/regular"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_below="@id/txtUserName"
+              android:maxWidth="200dp"
+              android:layout_marginStart="8dp"
+              android:layout_marginTop="4dp"
+              android:layout_marginEnd="8dp"
+              android:layout_marginBottom="4dp"
+              android:text="Hi this is Test"
+              android:textColor="@color/white"
+              android:textSize="16sp" />
+
+          <TextView
+              android:id="@+id/txtTime"
+              style="@style/regular"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_alignBottom="@id/txtMess"
+              android:layout_marginEnd="8dp"
+              android:layout_toEndOf="@id/txtMess"
+              android:text="07:30 pm"
+              android:textColor="@color/white"
+              android:textSize="10sp" />
+
+      </RelativeLayout>
+
+      <RelativeLayout
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="end"
+          android:layout_marginTop="@dimen/_10sdp"
+          android:background="@drawable/blue_trasparent">
+
+          <TextView
+              android:id="@+id/txtUserName1"
+              style="@style/bold"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:ellipsize="end"
+              android:maxWidth="150dp"
+              android:maxLines="1"
+              android:paddingStart="8dp"
+              android:paddingTop="4sp"
+              android:paddingEnd="8dp"
+              android:text="userName"
+              android:textColor="@color/white"
+              android:textSize="12sp"
+              android:visibility="gone" />
+
+          <TextView
+              android:id="@+id/txtMess1"
+              style="@style/regular"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_below="@id/txtUserName1"
+              android:maxWidth="200dp"
+              android:layout_marginStart="8dp"
+              android:layout_marginTop="4dp"
+              android:layout_marginEnd="8dp"
+              android:layout_marginBottom="4dp"
+              android:text="Hi this is Test"
+              android:textColor="@color/white"
+              android:textSize="16sp" />
+
+          <TextView
+              android:id="@+id/txtTime1"
+              style="@style/regular"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_alignBottom="@id/txtMess1"
+              android:layout_marginEnd="8dp"
+              android:layout_toEndOf="@id/txtMess1"
+              android:text="07:30 pm"
+              android:textColor="@color/white"
+              android:textSize="10sp" />
+
+      </RelativeLayout>
+
+  </LinearLayout>
+
+
+</RelativeLayout>

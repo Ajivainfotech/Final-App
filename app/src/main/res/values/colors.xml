@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#000046</color>
+    <color name="colorPrimaryDark">#000046</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="appThemeColor">#000046</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="colorBlack">#000000</color>
+    <color name="black_color">#000000</color>
+    <color name="background">#FAFAFA</color>
+    <color name="textColor">#AD000000</color>
+    <color name="grey_light">#AD000000</color>
+
+    <color name="coloCreamyWhite">#FAFAFA</color>
+    <color name="darkblue">#000046</color>
+    <color name="lightblue">#1CB5E0</color>
+    <color name="hintColor">#a8a8a8</color>
+    <color name="light_orange">#f1c881</color>
+    <color name="grey">#C0C0C0</color>
+
+    <color name="colorRed">#ea2222</color>
+    <color name="colorGrey">#9b9b9b</color>
+    <color name="colorEvenCardColor">#e9ecf3</color>
+    <color name="colorOddCardColor">#f8f4e8</color>
+
+    <color name="red_color">#E60024</color>
+    <color name="light_red_color">#66E60024</color>
+    <color name="et_bg_color">#F1F2F6</color>
+
+    <color name="grey_color">#474443</color>
+    <color name="white_color">#FFFFFF</color>
+    <color name="light_white">#9AFFFFFF</color>
+    <color name="light_color">#F2F2F2</color>
+    <color name="hint_color">#878787</color>
+    <color name="closed_color">#85878787</color>
+    <color name="orange_color">#F67A7A</color>
+    <color name="black_trans">#660F0F49</color>
+    <color name="transparent">#66CBCBF8</color>
+    <color name="green_color">#44E86A</color>
+
+</resources>

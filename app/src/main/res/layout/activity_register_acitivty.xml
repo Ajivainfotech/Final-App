@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="signUpVM"
+            type="com.example.haggerplanet.views.signup.SignUpVM" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/bg"
+            android:orientation="vertical"
+            android:scaleType="centerCrop">
+
+        </ImageView>
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:scrollbars="none"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/ll_signup"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="@dimen/_150sdp"
+                    android:src="@drawable/logo"
+                    android:scaleType="centerCrop"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_height="@dimen/_150sdp" />
+
+                <EditText
+                    style="@style/ed_design"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:hint="Enter name"
+                    android:id="@+id/et_name"
+                    android:text="@={signUpVM.name}"
+                    android:inputType="textPersonName"
+                    android:textColorHint="@color/hintColor"
+                    android:textSize="@dimen/_12sdp" />
+
+
+                <EditText
+                    android:id="@+id/et_email"
+                    android:layout_width="match_parent"
+                    android:hint="Enter email"
+                    android:textColorHint="@color/hintColor"
+                    style="@style/ed_design"
+                    android:text="@={signUpVM.email}"
+                    android:inputType="textEmailAddress"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:textSize="@dimen/_12sdp"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/et_mobile"
+                    android:layout_width="match_parent"
+                    android:hint="Mobile number"
+                    android:textColorHint="@color/hintColor"
+                    style="@style/ed_design"
+                    android:text="@={signUpVM.mobile}"
+                    android:inputType="number"
+                    android:maxLength="10"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:textSize="@dimen/_12sdp"
+                    android:layout_height="wrap_content" />
+
+
+                <EditText
+                    android:id="@+id/et_password"
+                    style="@style/ed_design"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:hint="Enter Password"
+                    android:text="@={signUpVM.password}"
+                    android:inputType="textPassword"
+                    android:textColorHint="@color/hintColor"
+                    android:textSize="@dimen/_12sdp" />
+
+                <CheckBox
+                    android:id="@+id/cb_tc_checked"
+                    android:layout_width="wrap_content"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:buttonTint="@color/colorPrimaryDark"
+                    android:textSize="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:layout_marginLeft="@dimen/_26sdp"
+                    android:text="Terms &amp; Conditions"
+                    android:layout_height="wrap_content" />
+
+
+                <Button
+                    android:id="@+id/btnRegisterr"
+                    android:layout_width="match_parent"
+                    style="@style/blue_btn_design"
+                    android:text="Register"
+                    android:textSize="@dimen/_10sdp"
+                    android:onClick="@{() -> signUpVM.onCLickSignUp()}"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_height="@dimen/_32sdp" />
+
+                <Button
+                    android:id="@+id/btnLoginn"
+                    android:layout_width="match_parent"
+                    style="@style/blue_btn_design"
+                    android:text="Login"
+                    android:textSize="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_height="@dimen/_32sdp"
+                    android:onClick="@{() -> signUpVM.onClickLogin()}"/>
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+
+    </RelativeLayout>
+</layout>
