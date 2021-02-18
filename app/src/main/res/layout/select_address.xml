@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="selectAddressVM"
+            type="com.example.haggerplanet.views.selectAddress.SelectAddressVM" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg"
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constMain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:id="@+id/linear"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    app:layout_constraintBottom_toBottomOf="@+id/cbAddress"
+                    app:layout_constraintStart_toEndOf="@+id/cbAddress"
+                    app:layout_constraintTop_toTopOf="@+id/cbAddress"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:orientation="vertical"
+                    >
+
+                    <TextView
+                        android:id="@+id/tvRecdent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Recently used"
+                        android:textSize="@dimen/_12sdp"
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Kevin clark"
+                        android:textSize="@dimen/_12sdp"
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="#12/45,Street no 4, Janakpuri phase 6"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:textSize="@dimen/_10sdp"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mohali 161515"
+                        android:textSize="@dimen/_10sdp"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="9803665964"
+                        android:textSize="@dimen/_10sdp"
+                        />
+
+                </LinearLayout>
+
+                <CheckBox
+                    android:id="@+id/cbAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:buttonTint="@color/darkblue"
+                    android:checked="true"/>
+
+                <Button
+                    android:id="@+id/btnLogin"
+                    android:layout_width="match_parent"
+                    style="@style/blue_btn_design"
+                    android:text="Deliver to this address"
+                    android:textSize="@dimen/_8sdp"
+                    app:layout_constraintTop_toBottomOf="@+id/linear"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_height="@dimen/_28sdp" />
+
+                <Button
+                    android:id="@+id/btnLogin1"
+                    android:layout_width="0dp"
+                    android:text="Edit address"
+                    android:textSize="@dimen/_10sdp"
+                    app:layout_constraintTop_toBottomOf="@+id/btnLogin"
+                    android:textColor="@color/black"
+                    android:onClick="@{()->selectAddressVM.onClickAddAdressEdit()}"
+
+                    android:layout_marginTop="@dimen/_5sdp"
+                    app:layout_constraintEnd_toEndOf="@+id/btnLogin"
+                    app:layout_constraintStart_toStartOf="@+id/btnLogin"
+                    android:textAllCaps="false"
+                    android:layout_height="wrap_content" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rlAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                tools:listitem="@layout/address_adapter"
+                setRecyclerAdapter="@{selectAddressVM.addressAdapter}"
+                android:layout_marginStart="@dimen/_10sdp"
+                tools:itemCount="3"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:layout_marginEnd="@dimen/_10sdp"
+                app:layout_constraintTop_toBottomOf="@+id/constMain"/>
+
+            <Button
+                android:id="@+id/btnAddNewAddress"
+                android:layout_width="0dp"
+                android:text="Add a new address"
+                android:textSize="@dimen/_10sdp"
+                app:layout_constraintTop_toBottomOf="@+id/rlAddress"
+                android:textColor="@color/black"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:drawableEnd="@drawable/arrow_next"
+                android:drawablePadding="@dimen/_10sdp"
+                android:onClick="@{()->selectAddressVM.onClickAddAdress()}"
+                android:drawableTint="@color/black"
+                app:layout_constraintEnd_toStartOf="@+id/btnAdPickPoint"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textAllCaps="false"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/btnAdPickPoint"
+                android:layout_width="0dp"
+                android:text="Add a pickup point"
+                android:textSize="@dimen/_10sdp"
+                app:layout_constraintTop_toBottomOf="@+id/rlAddress"
+                android:textColor="@color/black"
+                android:drawableEnd="@drawable/arrow_next"
+                android:drawablePadding="@dimen/_10sdp"
+                android:drawableTint="@color/black"
+                android:visibility="gone"
+                android:layout_marginTop="@dimen/_20sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="@dimen/_10sdp"
+                app:layout_constraintStart_toEndOf="@+id/btnAddNewAddress"
+                android:textAllCaps="false"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/btnCheckout"
+                android:layout_width="match_parent"
+                style="@style/blue_btn_design2"
+                android:text="Checkout"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnAdPickPoint"
+                android:textSize="@dimen/_12sdp"
+                android:onClick="@{()->selectAddressVM.onClickPayment()}"
+                android:textColor="@color/white"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:layout_height="@dimen/_32sdp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</layout>

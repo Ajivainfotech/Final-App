@@ -45,6 +45,7 @@ class ViewPagerAdapter(var context: Context)  : PagerAdapter() {
 
         if (splashList.size != 0) {
             Log.e("splashImages", splashList.size.toString())
+            Log.e("splashImagesData", splashList[position].image)
            /* Glide.with(context).load(splashList[position].image)
                 .into(imageview)*/
             Picasso.get().load(splashList[position].image).resize(400, 300)

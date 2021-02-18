@@ -582,7 +582,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     />
 
-                <androidx.cardview.widget.CardView
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/cvShopNow"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -592,6 +592,7 @@
                     app:cardCornerRadius="@dimen/_3sdp"
                     app:contentPadding="@dimen/_5sdp"
                     app:layout_constraintStart_toStartOf="parent"
+                    style="@style/blue_btn_design2"
                     android:layout_marginBottom="@dimen/_5sdp"
                     app:layout_constraintTop_toBottomOf="@+id/View4">
 
@@ -599,11 +600,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingStart="@dimen/_3sdp"
+                        app:layout_constraintStart_toStartOf="parent"
                         android:paddingEnd="@dimen/_3sdp"
+                        app:layout_constraintTop_toTopOf="parent"
                         android:text="Buy Now"
                         android:textColor="@color/white" />
 
-                </androidx.cardview.widget.CardView>
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <TextView
                     android:id="@+id/tvSoldBy"

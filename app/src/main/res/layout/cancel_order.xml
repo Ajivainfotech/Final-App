@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="cancelOrderVM"
+            type="com.example.haggerplanet.views.cancelOrder.CancelOrderVM" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg">
+
+        <EditText
+            android:id="@+id/tv_gendar"
+            android:layout_width="match_parent"
+            android:hint="Select Cancellation Reason"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/round_edittext"
+            android:inputType="textPersonName"
+            android:textSize="@dimen/_11sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:focusable="false"
+            app:layout_constraintTop_toTopOf="parent"
+            android:drawableEnd="@drawable/ic_baseline_keyboard_arrow_down_24"
+            android:padding="@dimen/_8sdp"
+            style="@style/regular"
+            android:layout_height="wrap_content" />
+
+
+        <EditText
+            android:id="@+id/tvCancelDesc"
+            android:layout_width="match_parent"
+            android:hint="Slect Cancellation Reason"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/round_edittext"
+            android:inputType="textPersonName"
+            android:textSize="@dimen/_11sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:focusable="false"
+            app:layout_constraintTop_toBottomOf="@+id/tv_gendar"
+            android:padding="@dimen/_8sdp"
+            style="@style/regular"
+            android:gravity="top"
+            android:layout_height="@dimen/_140sdp" />
+
+        <ImageView
+            android:id="@+id/ivRefund"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:src="@drawable/bg"
+            android:scaleType="fitXY"
+            app:layout_constraintTop_toBottomOf="@+id/tvCancelDesc"
+            android:layout_marginTop="@dimen/_20sdp"/>
+
+        <TextView
+            android:id="@+id/tvSeller"
+            android:layout_width="wrap_content"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintTop_toTopOf="@+id/ivRefund"
+            app:layout_constraintBottom_toBottomOf="@+id/ivRefund"
+            android:text="Refund Mode"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tvAmountVal"
+            android:layout_width="wrap_content"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:textSize="@dimen/_10sdp"
+            app:layout_constraintTop_toBottomOf="@+id/ivRefund"
+            android:text="Refund Amount : $100"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tvPaymentMode"
+            android:layout_width="wrap_content"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintTop_toBottomOf="@+id/tvAmountVal"
+            android:text="Original Payment mode"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tvAmountRefund"
+            android:layout_width="wrap_content"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_centerHorizontal="true"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:textSize="@dimen/_10sdp"
+            app:layout_constraintTop_toBottomOf="@+id/tvPaymentMode"
+            android:text="$100 will be refunded with in 4 working days"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btnContinue"
+            android:layout_width="match_parent"
+            android:text="Confirm Cancellations"
+            android:textSize="@dimen/_8sdp"
+            app:layout_constraintTop_toBottomOf="@+id/tvAmountRefund"
+            android:gravity="center"
+            style="@style/blue_btn_design2"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:onClick="@{()->cancelOrderVM.orderCancellation()}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:textColor="@color/white"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_height="@dimen/_28sdp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

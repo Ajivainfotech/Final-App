@@ -48,10 +48,14 @@
                     android:id="@+id/ivVisa"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/view1"
-                    app:layout_constraintStart_toStartOf="@id/view1"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    app:layout_constraintBottom_toTopOf="@id/view2"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
                     android:src="@drawable/visa"
-                    android:layout_marginTop="@dimen/_10sdp"/>
+                   />
 
                 <View
                     android:id="@+id/view2"
@@ -61,8 +65,9 @@
                     app:layout_constraintStart_toStartOf="@id/tvPaymentInfo"
                     app:layout_constraintEnd_toEndOf="parent"
                     android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
                     android:background="@color/black"
-                    android:layout_marginTop="@dimen/_20sdp"/>
+                   />
 
                 <TextView
                     android:id="@+id/tvCardDetail"
@@ -82,6 +87,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Card details"
+                    android:background="@color/white"
+                    android:elevation="@dimen/_5sdp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tvCardDetail"
                     android:textColorHint="@color/hintColor"
@@ -104,6 +111,8 @@
                     android:hint="Expiry Date"
                     app:layout_constraintEnd_toStartOf="@id/guide1"
                     app:layout_constraintStart_toStartOf="parent"
+                    android:background="@color/white"
+                    android:elevation="@dimen/_5sdp"
                     app:layout_constraintTop_toBottomOf="@id/et_card_detail"
                     android:textColorHint="@color/hintColor"
                     style="@style/payment_info_design"
@@ -117,6 +126,8 @@
                     android:layout_height="wrap_content"
                     android:hint="CVV"
                     app:layout_constraintStart_toEndOf="@id/guide1"
+                    android:background="@color/white"
+                    android:elevation="@dimen/_5sdp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/et_card_detail"
                     android:textColorHint="@color/hintColor"
@@ -129,6 +140,8 @@
                     android:id="@+id/et_card_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:elevation="@dimen/_5sdp"
                     android:hint="Name on Card"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/et_cvv"
@@ -141,9 +154,10 @@
                 <Button
                     android:id="@+id/btnProceed"
                     android:layout_width="match_parent"
-                    style="@style/blue_btn_design"
-                    android:text="Procees to Checkout"
+                    style="@style/blue_btn_design2"
+                    android:text="Make Payment"
                     android:textSize="@dimen/_12sdp"
+                    android:onClick="@{()->paymentVM.onclickProceed()}"
                     android:textAllCaps="false"
                     android:textColor="@color/white"
                     app:layout_constraintTop_toBottomOf="@id/et_card_name"

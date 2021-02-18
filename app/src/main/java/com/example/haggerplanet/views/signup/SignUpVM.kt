@@ -184,6 +184,5 @@ class SignUpVM(val context: Context):ViewModel(),RetrofitResponse {
     }
 
     override fun onError(requestCode: Int, msg: String) {
-        TODO("Not yet implemented")
     }
 }

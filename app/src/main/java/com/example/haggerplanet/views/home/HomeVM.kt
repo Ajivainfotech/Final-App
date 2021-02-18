@@ -1,19 +1,25 @@
 package com.example.haggerplanet.views.home
 
 import android.content.Context
+import android.view.View
+import android.widget.PopupMenu
+import androidx.appcompat.app.AlertDialog
 import androidx.core.view.GravityCompat
 import androidx.databinding.ObservableField
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.ViewModel
 import com.example.haggerplanet.R
+import com.example.haggerplanet.databinding.LanguageAlertBinding
 import com.example.haggerplanet.retrofit.RetrofitResponse
 import com.example.haggerplanet.retrofit.RetrofitService
 import com.example.haggerplanet.utils.CommonKeys
+import com.example.haggerplanet.utils.MethodsUtil
 import com.example.haggerplanet.utils.PrefferenceFile
 import com.example.haggerplanet.utils.WebApiKeys
 import com.example.haggerplanet.views.aboutUs.AboutUs
 import com.example.haggerplanet.views.cart.Cart
+import com.example.haggerplanet.views.editprofile.EditProfile
 import com.example.haggerplanet.views.homeFrag.HomeFrag
 import com.example.haggerplanet.views.homeFrag.HomeFragVM
 import com.example.haggerplanet.views.homeFrag.drawerCategory.DrawerCategoryAdapter
@@ -21,15 +27,18 @@ import com.example.haggerplanet.views.notification.Notifications
 import com.example.haggerplanet.views.privacyPolicy.PrivacyPolicy
 import com.example.haggerplanet.views.profile.Profile
 import com.example.haggerplanet.views.sellFragment.SellFrag
+import com.example.haggerplanet.views.termsAndConditions.TermsAndConditions
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.example.haggerplanet.utils.MethodsUtil
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.nav_header.view.*
 import kotlinx.android.synthetic.main.toolbar.view.*
 import org.json.JSONObject
 
+
 class HomeVM(val context: Context,val home: Home):ViewModel(),RetrofitResponse {
     var catList=ArrayList<HomeFragVM.CategoryModel>()
+
+    lateinit var languageAlertBinding: LanguageAlertBinding
+    lateinit var languageAlert:AlertDialog
 
     var locale="en"
     var name=ObservableField("")
@@ -37,14 +46,19 @@ class HomeVM(val context: Context,val home: Home):ViewModel(),RetrofitResponse {
     var categoryAdapter= DrawerCategoryAdapter(context)
     init {
         var name=PrefferenceFile.retrieveKey(context,CommonKeys.USER_NAME)
-        //home.itemLayout.navProfileImg
         Home.mainBinding.headerView.txtNavUsername.text=name
         openFrag(context,HomeFrag())
         getHomeData()
         onClickMennu()
         onClickSearch()
         onClickBack()
+        onClickLang()
+        onClickImage()
+
     }
+
+
+
     fun openFrag(context: Context, fragment: Fragment) {
         (context as FragmentActivity).supportFragmentManager.beginTransaction()
                 .replace(R.id.frameHome, fragment)
@@ -55,6 +69,17 @@ class HomeVM(val context: Context,val home: Home):ViewModel(),RetrofitResponse {
         Home.mainBinding.itemLayout.ivBack.setOnClickListener {
             home.onBackPressed()
         }
+
+
+    }
+
+
+    fun onClickLang(){
+        Home.mainBinding.itemLayout.tvLang.setOnClickListener {
+            onClickMenuButton(Home.mainBinding.itemLayout.tvLang)
+
+        }
+
     }
 
     fun onClickMennu(){
@@ -69,6 +94,13 @@ class HomeVM(val context: Context,val home: Home):ViewModel(),RetrofitResponse {
         }
     }
 
+    fun onClickImage(){
+        Home.mainBinding.headerView.navProfileImg.setOnClickListener {
+            closeDrawer()
+            MethodsUtil.loadFragment(context,EditProfile())
+        }
+    }
+
     fun onClickAboutUs(){
         closeDrawer()
         MethodsUtil.loadFragment(context,AboutUs())
@@ -77,6 +109,11 @@ class HomeVM(val context: Context,val home: Home):ViewModel(),RetrofitResponse {
         closeDrawer()
         MethodsUtil.loadFragment(context,PrivacyPolicy())
     }
+    fun onClickTermsAndConditions(){
+        closeDrawer()
+        MethodsUtil.loadFragment(context,TermsAndConditions())
+    }
+
     fun onClickLogout(){
         PrefferenceFile.logout(context)
     }
@@ -84,6 +121,112 @@ class HomeVM(val context: Context,val home: Home):ViewModel(),RetrofitResponse {
     fun closeDrawer(){
 
         Home.mainBinding.drawerLayout.closeDrawer(GravityCompat.START)
+    }
+
+    fun openLanguageAlert() {
+
+      /*  try {
+
+                var docBuilder = AlertDialog.Builder(context)
+                languageAlertBinding =
+                        DataBindingUtil.inflate(
+                                LayoutInflater.from(context),
+                                R.layout.language_alert,
+                                null,
+                                false
+                        )
+
+                docBuilder.setView(languageAlertBinding!!.root)
+                languageAlert = docBuilder.create()
+                languageAlert.window!!.attributes.windowAnimations = R.style.DialogAnimation
+                langVM()
+                languageAlert.show()
+                languageAlert.window!!.setGravity(Gravity.CENTER)
+                languageAlert.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }*/
+    }
+
+    fun onClickMenuButton(view: View) {
+
+        try {
+            val popupMenu = PopupMenu(context, view)
+            popupMenu.menuInflater.inflate(R.menu.toolbar_menu, popupMenu.menu)
+
+      /*      val m = popupMenu.menu
+
+            if (!Chat.reportVisible.get()!!) {
+
+                m.removeItem(R.id.report)
+
+            } else {
+
+            }*/
+
+            popupMenu.setOnMenuItemClickListener {
+                when (it.itemId) {
+                    R.id.English -> {
+
+                       // FragmentLoadActivity.menuChatInterface!!.onCLickOptions(CommonKeys.GROUP_INFO)
+
+                        true
+                    }
+                    R.id.Francais -> {
+
+                      //  FragmentLoadActivity.menuChatInterface!!.onCLickOptions(CommonKeys.CHAT_SEARCH)
+                        true
+                    }
+                    R.id.中国人 -> {
+
+                      //  FragmentLoadActivity.menuChatInterface!!.onCLickOptions(CommonKeys.CLEAR_CHAT)
+                        true
+
+                    }
+                    R.id.Deutsch -> {
+
+                    // FragmentLoadActivity.menuChatInterface!!.onCLickOptions(CommonKeys.EXIT_GROUP)
+
+                        true
+
+                    }
+                    R.id.Turk -> {
+                     //   FragmentLoadActivity.menuChatInterface!!.onCLickOptions(CommonKeys.REPORT)
+
+                        true
+
+                    }
+                    R.id.abbr -> {
+                        //   FragmentLoadActivity.menuChatInterface!!.onCLickOptions(CommonKeys.REPORT)
+
+                        true
+
+                    }
+                    R.id.Espanola -> {
+                        //   FragmentLoadActivity.menuChatInterface!!.onCLickOptions(CommonKeys.REPORT)
+
+                        true
+
+                    }
+                    else -> {
+                        false
+                    }
+                }
+            }
+            popupMenu.show()
+
+        } catch (e: Exception) {
+
+            e.printStackTrace()
+        }
+    }
+
+    private fun langVM() {
+
+        var forgotPasswordAlert =
+                LanguageAlertVM(context, languageAlert)
+        languageAlertBinding!!.languageAlertVM = forgotPasswordAlert
     }
 
     var navigationClick =

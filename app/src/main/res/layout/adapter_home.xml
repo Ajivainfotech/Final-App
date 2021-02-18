@@ -29,7 +29,6 @@
                 android:layout_gravity="center"
                 android:elevation="0dp"
                 android:onClick="@{()->homeCategoryAdapterVM.onClickItem()}"
-                android:background="@color/coloCreamyWhite"
                 card_view:cardCornerRadius="@dimen/_3sdp"
                 android:layout_centerHorizontal="true"
                 card_view:cardPreventCornerOverlap="true"
@@ -45,7 +44,7 @@
                         android:layout_height="match_parent"
                         android:scaleType="centerCrop"
                         loadImage="@{homeCategoryAdapterVM.model.image}"
-                        android:src="@drawable/ic_launcher_background" />
+                        />
 
                     <TextView
                         android:id="@+id/innerview"
@@ -56,9 +55,10 @@
                         style="@style/regular"
                         android:layout_centerInParent="true"
                         android:padding="@dimen/_3sdp"
-                        android:textSize="@dimen/_12sdp"
-                        android:background="#74bf72e9"
-                        android:textColor="#fff" />
+                        android:shadowRadius="3"
+                        android:shadowColor="@color/pink"
+                        android:textSize="@dimen/_14sdp"
+                        android:textColor="@color/black" />
 
                 </RelativeLayout>
 

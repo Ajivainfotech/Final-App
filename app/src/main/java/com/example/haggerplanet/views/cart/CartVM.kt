@@ -5,11 +5,12 @@ import androidx.lifecycle.ViewModel
 import com.example.haggerplanet.utils.MethodsUtil
 import com.example.haggerplanet.views.cart.cartAdapter.CartAdapter
 import com.example.haggerplanet.views.payment.PaymentInfo
+import com.example.haggerplanet.views.selectAddress.SelectAddress
 
 class CartVM(val context: Context):ViewModel() {
      var cartAdapter=CartAdapter(context)
 
      fun onClickCheckOut(){
-          MethodsUtil.loadFragment(context,PaymentInfo())
+          MethodsUtil.loadFragment(context,SelectAddress())
      }
 }

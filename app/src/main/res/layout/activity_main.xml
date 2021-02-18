@@ -166,6 +166,26 @@
                             </View>
 
                             <TextView
+                                android:id="@+id/tvTerms"
+                                style="@style/regular"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Terms and conditions"
+                                android:padding="@dimen/_7sdp"
+                                android:onClick="@{()->homeVM.onClickTermsAndConditions()}"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_13sdp" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_marginRight="@dimen/_2sdp"
+                                android:layout_marginLeft="@dimen/_2sdp"
+                                android:background="@drawable/blue_trasparent"
+                                android:layout_height="1dp">
+
+                            </View>
+
+                            <TextView
                                 android:id="@+id/tvLogout"
                                 style="@style/regular"
                                 android:layout_width="match_parent"

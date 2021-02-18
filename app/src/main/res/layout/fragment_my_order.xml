@@ -13,14 +13,51 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white">
+        android:background="@drawable/bg"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btCurrent"
+            android:layout_width="match_parent"
+            style="@style/blue_btn_design"
+            android:text="Current Order"
+            android:layout_marginTop="@dimen/_40sdp"
+            android:onClick="@{() -> myOrderVM.onClickCurrentOrder()}"
+            android:textSize="@dimen/_12sdp"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:layout_height="@dimen/_32sdp" />
+
+        <Button
+            android:id="@+id/btnPast"
+            android:layout_width="match_parent"
+            style="@style/blue_btn_design"
+            android:text="Past Order"
+            android:onClick="@{() -> myOrderVM.onClickPastOrder()}"
+            android:textSize="@dimen/_12sdp"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_height="@dimen/_32sdp" />
+
+        <Button
+            android:id="@+id/btnCustomer"
+            android:layout_width="match_parent"
+            style="@style/blue_btn_design"
+            android:onClick="@{() -> myOrderVM.conClickCustomerCare()}"
+            android:text="Contact customer care"
+            android:textSize="@dimen/_12sdp"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_height="@dimen/_32sdp" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerOrder"
             android:layout_width="match_parent"
             tools:listitem="@layout/myorder_items"
+            android:visibility="gone"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            setRecyclerAdapter="@{myOrderVM.myOrderAdapter}"
             android:layout_height="wrap_content" />
 
     </LinearLayout>

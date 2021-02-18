@@ -13,7 +13,9 @@ import com.example.haggerplanet.views.setting.Setting
 import com.example.haggerplanet.views.wishList.WishList
 import com.example.haggerplanet.utils.MethodsUtil
 import com.example.haggerplanet.utils.PrefferenceFile
+import com.example.haggerplanet.views.contactUs.ConactUs
 import com.example.haggerplanet.views.editprofile.EditProfile
+import com.example.haggerplanet.views.savecards.SaveCard
 
 class ProfileFragVM(val context: Context):ViewModel() {
 
@@ -45,16 +47,20 @@ class ProfileFragVM(val context: Context):ViewModel() {
     }
 
     fun onClickSaveCards(){
+        MethodsUtil.addFragment(context,SaveCard())
 
 
     }
-    fun onClickProfileDetails(){
-        MethodsUtil.addFragment(context,ProfileDetails())
+    fun onClickCoupons(){
+        MethodsUtil.addFragment(context,Coupon())
 
+    }
+
+    fun onClickContactUs(){
+        MethodsUtil.addFragment(context,ConactUs())
     }
 
     fun onClickSetting(){
-
         MethodsUtil.addFragment(context,Setting())
     }
 

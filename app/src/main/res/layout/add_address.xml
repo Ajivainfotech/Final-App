@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="addAddressVM"
+            type="com.example.haggerplanet.views.addAddress.AddAddressVM" />
+
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg">
+
+            <RadioGroup
+                android:id="@+id/radiogp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <RadioButton
+                    android:id="@+id/radioButton1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/lightblue"
+                    android:text="Billing Address"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    />
+
+                <RadioButton
+                    android:id="@+id/radioButton2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/lightblue"
+                    android:text="Shipping Address"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    />
+
+            </RadioGroup>
+
+            <EditText
+                android:id="@+id/etFirstName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/_5sdp"
+                android:paddingBottom="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:singleLine="true"
+                android:paddingStart="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:hint="FirstName*"
+                android:textSize="@dimen/_12sdp"
+                android:background="@drawable/blue_outline"
+                app:layout_constraintEnd_toStartOf="@+id/etLastName"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/radiogp"/>
+
+            <EditText
+                android:id="@+id/etLastName"
+                android:layout_width="0dp"
+                android:background="@drawable/blue_outline"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/_5sdp"
+                android:paddingBottom="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:singleLine="true"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:paddingStart="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:hint="LastName*"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/etFirstName"
+                app:layout_constraintTop_toBottomOf="@+id/radiogp"/>
+
+            <EditText
+                android:id="@+id/etEmail"
+                android:layout_width="match_parent"
+                android:background="@drawable/blue_outline"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/_5sdp"
+                android:paddingBottom="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:singleLine="true"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:paddingStart="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:hint="Email Address*"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/etFirstName"
+                app:layout_constraintTop_toBottomOf="@+id/etLastName"/>
+
+            <EditText
+                android:id="@+id/etCompany"
+                android:layout_width="match_parent"
+                android:background="@drawable/blue_outline"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/_5sdp"
+                android:paddingBottom="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:singleLine="true"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:paddingStart="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:hint="Company"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/etFirstName"
+                app:layout_constraintTop_toBottomOf="@+id/etEmail"/>
+
+            <EditText
+                android:id="@+id/etAddressLine"
+                android:layout_width="match_parent"
+                android:background="@drawable/blue_outline"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/_5sdp"
+                android:paddingBottom="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:singleLine="true"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:paddingStart="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:hint="Address Line 1*"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/etFirstName"
+                app:layout_constraintTop_toBottomOf="@+id/etCompany"/>
+
+            <EditText
+                android:id="@+id/etAddressLine2"
+                android:layout_width="match_parent"
+                android:background="@drawable/blue_outline"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/_5sdp"
+                android:paddingBottom="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:singleLine="true"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:paddingStart="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:hint="Address Line 2*"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/etFirstName"
+                app:layout_constraintTop_toBottomOf="@+id/etAddressLine"/>
+
+            <EditText
+                android:id="@+id/etAddressCity"
+                android:layout_width="0dp"
+                android:background="@drawable/blue_outline"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/_5sdp"
+                android:paddingBottom="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:paddingEnd="@dimen/_5sdp"
+                android:enabled="false"
+                android:singleLine="true"
+                android:drawableEnd="@drawable/ic_baseline_keyboard_arrow_down_24"
+                android:paddingStart="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:hint="Select Country*"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintEnd_toStartOf="@+id/etAddressState"
+                app:layout_constraintStart_toStartOf="@+id/etFirstName"
+                app:layout_constraintTop_toBottomOf="@+id/etAddressLine2"/>
+
+            <EditText
+                android:id="@+id/etAddressState"
+                android:layout_width="0dp"
+                android:background="@drawable/blue_outline"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/_5sdp"
+                android:paddingEnd="@dimen/_5sdp"
+                android:paddingBottom="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:enabled="false"
+                android:singleLine="true"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:drawableEnd="@drawable/ic_baseline_keyboard_arrow_down_24"
+                android:paddingStart="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:hint="Select State"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/etFirstName"
+                app:layout_constraintTop_toBottomOf="@+id/etAddressLine2"/>
+
+            <EditText
+                android:id="@+id/etAddresPostal"
+                android:layout_width="0dp"
+                android:background="@drawable/blue_outline"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/_5sdp"
+                android:paddingBottom="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:paddingEnd="@dimen/_5sdp"
+                android:enabled="false"
+                android:singleLine="true"
+                android:paddingStart="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:drawableEnd="@drawable/ic_baseline_keyboard_arrow_down_24"
+                android:hint="Select City*"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintEnd_toStartOf="@+id/etAddressState"
+                app:layout_constraintStart_toStartOf="@+id/etFirstName"
+                app:layout_constraintTop_toBottomOf="@+id/etAddressState"/>
+
+            <EditText
+                android:id="@+id/etAddressCountry"
+                android:layout_width="0dp"
+                android:background="@drawable/blue_outline"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/_6sdp"
+                android:paddingEnd="@dimen/_5sdp"
+                android:paddingBottom="@dimen/_6sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:singleLine="true"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:paddingStart="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:hint="Postal Code"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/etFirstName"
+                app:layout_constraintTop_toBottomOf="@+id/etAddressState"/>
+
+            <Button
+                android:id="@+id/btnCheckout"
+                style="@style/blue_btn_design2"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_28sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:onClick="@{()->addAddressVM.onClickAddressSumbit()}"
+                android:text="Submit"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etAddresPostal"
+               />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</layout>

@@ -28,7 +28,11 @@ class DrawerCategoryAdapter(var context: Context) :
     }
 
     override fun getItemCount(): Int {
-        return categoryList.size
+
+        if(categoryList.size>5){
+            return 5
+        }
+       return categoryList.size
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {

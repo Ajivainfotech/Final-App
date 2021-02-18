@@ -33,5 +33,7 @@ class Profile:Fragment() {
         Home.mainBinding.itemLayout.ivNotification.visibility=View.GONE
         Home.mainBinding.itemLayout.toolTitle.text="Account Info"
         Home.mainBinding.itemLayout.ivBack.visibility=View.GONE
+        Home.mainBinding.itemLayout.tvLang.visibility=View.VISIBLE
+        Home.mainBinding.itemLayout.ivLogo.visibility=View.VISIBLE
     }
 }

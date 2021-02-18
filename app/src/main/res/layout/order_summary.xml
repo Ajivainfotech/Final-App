@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="orderSummaryVM"
+            type="com.example.haggerplanet.views.orderSummary.OrderSummaryVM" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:fillViewport="true"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/cvContiue"
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constMain"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <LinearLayout
+                        android:id="@+id/linear"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        app:layout_constraintBottom_toBottomOf="@+id/cbAddress"
+                        app:layout_constraintStart_toEndOf="@+id/cbAddress"
+                        app:layout_constraintTop_toTopOf="@+id/cbAddress"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:orientation="vertical"
+                        >
+
+                        <TextView
+                            android:id="@+id/tvRecdent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Recently used"
+                            android:textSize="@dimen/_12sdp"
+                            android:textColor="@color/black"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Kevin clark"
+                            android:textSize="@dimen/_12sdp"
+                            android:textColor="@color/black"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="#12/45,Street no 4, Janakpuri phase 6"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:textSize="@dimen/_10sdp"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Mohali 161515"
+                            android:textSize="@dimen/_10sdp"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="9803665964"
+                            android:textSize="@dimen/_10sdp"
+                            />
+
+                    </LinearLayout>
+
+                    <CheckBox
+                        android:id="@+id/cbAddress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_30sdp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:buttonTint="@color/darkblue"
+                        android:checked="true"/>
+
+                    <Button
+                        android:id="@+id/btnLogin"
+                        android:layout_width="match_parent"
+                        style="@style/blue_btn_design"
+                        android:text="Edit address or Change address"
+                        android:onClick="@{()->orderSummaryVM.onClickAddAdressEdit()}"
+                        android:textSize="@dimen/_8sdp"
+                        app:layout_constraintTop_toBottomOf="@+id/linear"
+                        android:textColor="@color/white"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_height="@dimen/_28sdp" />
+
+                    <Button
+                        android:id="@+id/btnLogin1"
+                        android:layout_width="0dp"
+                        android:text="Edit address"
+                        android:textSize="@dimen/_10sdp"
+                        app:layout_constraintTop_toBottomOf="@+id/btnLogin"
+                        android:visibility="gone"
+                        android:textColor="@color/black"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        app:layout_constraintEnd_toEndOf="@+id/btnLogin"
+                        app:layout_constraintStart_toStartOf="@+id/btnLogin"
+                        android:textAllCaps="false"
+                        android:layout_height="wrap_content" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rlAddress"
+                    setRecyclerAdapter="@{orderSummaryVM.orderSummaryAdapter}"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintTop_toBottomOf="@+id/constMain"
+                    tools:itemCount="3"
+                    tools:layout_editor_absoluteX="58dp"
+                    tools:listitem="@layout/items_adapter" />
+
+                <TextView
+                    android:id="@+id/tvPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Price (4 items)"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rlAddress"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/_12sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:id="@+id/tvPriceVaL"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$10,000"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rlAddress"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/_12sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:id="@+id/tvDiscount1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Discount"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvPrice"
+                    android:textStyle="bold"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:textSize="@dimen/_12sdp"
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:id="@+id/tvDiscount1Val"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-$2,000"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvPrice"
+                    android:textStyle="bold"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:textSize="@dimen/_12sdp"
+                    android:textColor="@color/grey_color"/>
+
+                <TextView
+                    android:id="@+id/tvSaveMore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Buy more &amp; save more"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvDiscount1Val"
+                    android:textStyle="bold"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:textSize="@dimen/_12sdp"
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:id="@+id/tvBuyMore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-$100"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvDiscount1Val"
+                    android:textStyle="bold"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:textSize="@dimen/_12sdp"
+                    android:textColor="@color/grey_color"/>
+
+                <TextView
+                    android:id="@+id/tvDeliveryCharges"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Delivery Charges"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvBuyMore"
+                    android:textStyle="bold"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:textSize="@dimen/_12sdp"
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:id="@+id/tvDeliveryVal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Free"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvBuyMore"
+                    android:textStyle="bold"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:textSize="@dimen/_12sdp"
+                    android:textColor="@color/grey_color"/>
+
+                <View
+                    android:id="@+id/ViewTotal"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grey"
+                    app:layout_constraintTop_toBottomOf="@+id/tvDeliveryVal"
+                    android:layout_marginTop="@dimen/_10sdp"/>
+
+                <TextView
+                    android:id="@+id/tvGrandTotal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ViewTotal"
+                    android:textStyle="bold"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:textSize="@dimen/_14sdp"
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:id="@+id/tvGrandTotalVal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$79,000"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ViewTotal"
+                    android:textStyle="bold"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:textSize="@dimen/_14sdp"
+                    android:textColor="@color/black"/>
+
+                <View
+                    android:id="@+id/ViewTotal2"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grey"
+
+                    app:layout_constraintTop_toBottomOf="@+id/tvGrandTotalVal"
+                    android:layout_marginTop="@dimen/_7sdp"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.core.widget.NestedScrollView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvContiue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="@dimen/_5sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:contentPadding="@dimen/_10sdp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+
+                <TextView
+                    android:id="@+id/tvTotalPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$7900"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/_14sdp"
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:id="@+id/tvTotalPDetailsrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="View Price Details"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvTotalPrice"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/_11sdp"
+                    android:textColor="@color/lightblue"/>
+
+                <Button
+                    android:id="@+id/btnContinue"
+                    android:layout_width="wrap_content"
+                    android:text="Continue"
+                    android:textSize="@dimen/_8sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:gravity="center"
+                    android:onClick="@{()->orderSummaryVM.onClickContiue()}"
+                    style="@style/blue_btn_design2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:textColor="@color/white"
+                    android:layout_height="@dimen/_28sdp" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,16 +1,20 @@
 package com.example.haggerplanet.views.home
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
+import android.view.View
+import android.widget.PopupMenu
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.example.haggerplanet.R
 import com.example.haggerplanet.databinding.ActivityMainBinding
-import com.example.haggerplanet.databinding.FragmentHomeBinding
 import com.example.haggerplanet.databinding.ToolbarBinding
 import com.example.haggerplanet.views.cart.Cart
 import com.example.haggerplanet.views.homeFrag.HomeFrag
 import com.example.haggerplanet.views.profile.Profile
 import com.example.haggerplanet.views.sellFragment.SellFrag
+import kotlinx.android.synthetic.main.toolbar.view.*
+
 
 class Home : AppCompatActivity() {
 
@@ -56,4 +60,6 @@ class Home : AppCompatActivity() {
 
         }
     }
+
+
 }

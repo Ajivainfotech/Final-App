@@ -23,11 +23,10 @@
           android:text="Username"
           android:layout_below="@+id/navProfileImg"
           android:id="@+id/txtNavUsername"
-          android:padding="@dimen/_4sdp"
           android:layout_centerHorizontal="true"
           android:layout_width="wrap_content"
           android:textColor="@color/white"
-          android:layout_marginTop="@dimen/_12sdp"
+          android:layout_marginTop="@dimen/_30sdp"
           android:layout_height="wrap_content">
 
       </TextView>

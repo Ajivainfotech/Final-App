@@ -12,7 +12,6 @@
     <ScrollView
         android:layout_width="match_parent"
         android:orientation="vertical"
-        android:layout_margin="@dimen/_4sdp"
         android:background="@color/coloCreamyWhite"
         android:layout_height="match_parent">
 
@@ -40,21 +39,37 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:background="@drawable/blue_trasparent"
-                    android:layout_margin="@dimen/_4sdp"
                     android:layout_height="@dimen/_180sdp">
 
                     <de.hdodenhof.circleimageview.CircleImageView
                         android:layout_width="@dimen/_80sdp"
                         android:id="@+id/img"
                         android:layout_centerInParent="true"
+                        android:onClick="@{()->editProfileVM.onClickPermission()}"
                         android:src="@drawable/image_placeholder"
+                        loadCircleImage="@{editProfileVM.userImage}"
+                        setCircleImageUri="@{editProfileVM.imageUri}"
                         android:layout_height="@dimen/_80sdp" />
+
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_edit"
+                        android:padding="@dimen/_5sdp"
+                        android:visibility="gone"
+                        android:layout_toRightOf="@+id/img"
+                        android:layout_marginEnd="@dimen/_20sdp"
+                        app:layout_constraintTop_toTopOf="@+id/img"
+                        android:layout_alignTop="@+id/img"
+                        app:layout_constraintStart_toStartOf="@+id/img"
+                        app:layout_constraintEnd_toEndOf="parent"/>
 
                     <TextView
                         android:id="@+id/tv_username"
                         android:layout_width="wrap_content"
                         android:text="@{editProfileVM.name}"
-                        android:layout_marginTop="@dimen/_2sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
                         android:layout_centerHorizontal="true"
                         android:textColor="@color/white"
                         android:layout_below="@+id/img"
@@ -84,9 +99,22 @@
                             android:id="@+id/tv_name"
                             android:layout_width="match_parent"
                             android:hint="First Name"
-                            android:text="@{editProfileVM.name}"
+                            android:text="@={editProfileVM.name}"
                             android:background="@drawable/round_edittext"
                             android:inputType="textPersonName"
+                            android:textSize="@dimen/_12sdp"
+                            android:padding="@dimen/_8sdp"
+                            style="@style/regular"
+                            android:layout_height="wrap_content" />
+
+                        <EditText
+                            android:id="@+id/tv_name1"
+                            android:layout_width="match_parent"
+                            android:hint="Last Name"
+                            android:text="@={editProfileVM.lastName}"
+                            android:background="@drawable/round_edittext"
+                            android:inputType="textPersonName"
+                            android:layout_marginTop="@dimen/_10sdp"
                             android:textSize="@dimen/_12sdp"
                             android:padding="@dimen/_8sdp"
                             style="@style/regular"
@@ -110,7 +138,7 @@
                             android:layout_width="match_parent"
                             android:hint="Mobile "
                             android:layout_marginTop="@dimen/_10sdp"
-                            android:text="@{editProfileVM.phone}"
+                            android:text="@={editProfileVM.phone}"
                             android:background="@drawable/round_edittext"
                             android:inputType="number"
                             android:textSize="@dimen/_12sdp"
@@ -130,6 +158,7 @@
                             android:inputType="textPersonName"
                             android:textSize="@dimen/_12sdp"
                             android:focusable="false"
+                            android:drawableEnd="@drawable/ic_baseline_keyboard_arrow_down_24"
                             android:padding="@dimen/_8sdp"
                             style="@style/regular"
                             android:layout_height="wrap_content" />
@@ -139,7 +168,7 @@
                             android:id="@+id/tv_email"
                             android:layout_width="match_parent"
                             android:hint="Email"
-                            android:text="@{editProfileVM.email}"
+                            android:text="@={editProfileVM.email}"
                             android:layout_marginTop="@dimen/_10sdp"
                             android:background="@drawable/round_edittext"
                             android:inputType="textEmailAddress"
@@ -199,6 +228,7 @@
                             android:layout_width="match_parent"
                             android:text="Save Details"
                             android:layout_alignParentBottom="true"
+                            android:onClick="@{()->editProfileVM.onClickEditProfile()}"
                             android:textColor="@color/white"
                             android:layout_marginBottom="@dimen/_10sdp"
                             style="@style/regular"

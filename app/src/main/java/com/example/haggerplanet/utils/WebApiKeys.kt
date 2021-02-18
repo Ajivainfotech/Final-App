@@ -26,11 +26,7 @@ object WebApiKeys {
     const val MORE_PRODUCT="additional"
     const val MORE_PRODUCT_REQ= 4
 
-    const val TERMS_CONDITIONS="terms-&-conditions"
-    const val TERMS_CONDITIONS_REQ= 4
 
-    const val PRIVACY_POLICY="privacy-policy"
-    const val PRIVACY_POLICY_REQ= 5
 
     const val ABOUT_US="about_us"
     const val ABOUT_US_REQ= 6
@@ -52,6 +48,12 @@ object WebApiKeys {
 
     const val ADDTO_WISHLIST="Add-wishlist"
     const val ADDTO_WISHLIST_REQ= 13
+
+    const val EDIT_PROFILE="update-profile"
+    const val EDIT_PROFILE_REQ=14
+
+    const val COUPONS="get-coupans"
+    const val COUPONS_REQ= 15
 
     const val IMAGE_URL="https://hagglerplanet.com/image/"
 

@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.android.tools.build.jetifier.core.utils.Log
 import com.example.haggerplanet.R
 import com.example.haggerplanet.databinding.AdapterHomeBinding
 import com.example.haggerplanet.views.homeFrag.HomeFragVM
@@ -28,6 +29,7 @@ class CategoryAdapter(var context: Context) :
     }
 
     override fun getItemCount(): Int {
+        Log.e("CategoryAdapter","Listsize"+categoryList.size)
         return categoryList.size
     }
 
@@ -45,8 +47,8 @@ class CategoryAdapter(var context: Context) :
         ) {
 
             val shopByCategoryAdapterVM=HomeCategoryAdapterVM(context,model,position)
-            adapterHomeBinding!!.homeCategoryAdapterVM=shopByCategoryAdapterVM
-            adapterHomeBinding!!.executePendingBindings()
+            adapterHomeBinding.homeCategoryAdapterVM=shopByCategoryAdapterVM
+            adapterHomeBinding.executePendingBindings()
         }
 
 

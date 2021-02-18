@@ -138,6 +138,7 @@ class HomeFragVM(val context: Context,val homeFrag: HomeFrag):ViewModel(), Retro
                                     bannerModel.tittle=bannerImages.getString("title")
                                     bannerModel.image=WebApiKeys.IMAGE_URL+bannerImages.getString("image")
                                     bannerList.add(bannerModel)
+
                                 }
 
                                 viewPagerAdapter!!.addDataInList(bannerList)

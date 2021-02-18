@@ -22,7 +22,6 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_margin="@dimen/_4sdp"
                 android:layout_height="@dimen/_140sdp">
 
                 <androidx.viewpager.widget.ViewPager

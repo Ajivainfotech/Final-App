@@ -25,7 +25,6 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:background="@drawable/blue_trasparent"
-                android:layout_margin="@dimen/_4sdp"
                 android:layout_height="@dimen/_180sdp">
 
                 <de.hdodenhof.circleimageview.CircleImageView
@@ -380,6 +379,130 @@
                         android:layout_height="1dp">
 
                     </View>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:onClick="@{()->profileFragVM.onClickCoupons()}"
+                        android:layout_height="wrap_content">
+
+
+                        <ImageView
+                            android:id="@+id/ivCard1"
+                            android:layout_width="@dimen/_16sdp"
+                            android:src="@drawable/home"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_height="@dimen/_16sdp" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginLeft="@dimen/_6sdp"
+                            android:layout_toRightOf="@+id/ivCard1"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                style="@style/bold"
+                                android:paddingTop="@dimen/_4sdp"
+                                android:text="Coupons"
+                                android:textColor="@color/textColor"
+                                android:textSize="@dimen/_12sdp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                style="@style/regular"
+                                android:text="view your discount coupons"
+                                android:gravity="center_horizontal"
+                                android:textColor="@color/textColor"
+                                android:textSize="@dimen/_8sdp" />
+
+                        </LinearLayout>
+
+
+                        <ImageView
+                            android:layout_width="@dimen/_20sdp"
+                            android:layout_height="@dimen/_20sdp"
+                            android:layout_alignParentRight="true"
+                            android:padding="@dimen/_6sdp"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/ic_next" />
+
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:background="@color/grey"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_height="1dp">
+
+                    </View>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:onClick="@{()->profileFragVM.onClickContactUs()}"
+                        android:layout_height="wrap_content">
+
+
+                        <ImageView
+                            android:id="@+id/ivCard4"
+                            android:layout_width="@dimen/_16sdp"
+                            android:src="@drawable/home"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_height="@dimen/_16sdp" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginLeft="@dimen/_6sdp"
+                            android:layout_toRightOf="@+id/ivCard4"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                style="@style/bold"
+                                android:paddingTop="@dimen/_4sdp"
+                                android:text="Contact Us"
+                                android:textColor="@color/textColor"
+                                android:textSize="@dimen/_12sdp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                style="@style/regular"
+                                android:text="view your discount coupons"
+                                android:gravity="center_horizontal"
+                                android:textColor="@color/textColor"
+                                android:textSize="@dimen/_8sdp" />
+
+                        </LinearLayout>
+
+
+                        <ImageView
+                            android:layout_width="@dimen/_20sdp"
+                            android:layout_height="@dimen/_20sdp"
+                            android:layout_alignParentRight="true"
+                            android:padding="@dimen/_6sdp"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/ic_next" />
+
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:background="@color/grey"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_height="1dp">
+
+                    </View>
+
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>

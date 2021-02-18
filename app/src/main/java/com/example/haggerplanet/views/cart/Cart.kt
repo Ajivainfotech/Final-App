@@ -28,10 +28,12 @@ class Cart:Fragment() {
     }
 
     fun setToolbar(){
-        Home.mainBinding.itemLayout.ivMenu.visibility=View.GONE
+        Home.mainBinding.itemLayout.ivMenu.visibility=View.VISIBLE
         Home.mainBinding.itemLayout.ivSearch.visibility=View.GONE
         Home.mainBinding.itemLayout.ivNotification.visibility=View.GONE
-        Home.mainBinding.itemLayout.toolTitle.text=""
-        Home.mainBinding.itemLayout.ivBack.visibility=View.VISIBLE
+        Home.mainBinding.itemLayout.toolTitle.text="Cart"
+        Home.mainBinding.itemLayout.ivBack.visibility=View.GONE
+        Home.mainBinding.itemLayout.tvLang.visibility=View.VISIBLE
+        Home.mainBinding.itemLayout.ivLogo.visibility=View.VISIBLE
     }
 }

@@ -34,5 +34,7 @@ class Notifications:Fragment() {
         Home.mainBinding.itemLayout.ivNotification.visibility=View.GONE
         Home.mainBinding.itemLayout.toolTitle.text="Notifications"
         Home.mainBinding.itemLayout.ivBack.visibility=View.VISIBLE
+        Home.mainBinding.itemLayout.tvLang.visibility=View.GONE
+        Home.mainBinding.itemLayout.ivLogo.visibility=View.GONE
     }
 }

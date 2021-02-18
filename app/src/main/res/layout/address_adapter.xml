@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="addressAdapterVM"
+            type="com.example.haggerplanet.views.selectAddress.selectAddressAdapter.AddressAdapterVM" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioGroup
+            android:id="@+id/radio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/Name"
+            app:layout_constraintBottom_toBottomOf="@+id/tvAddress"
+>
+            <RadioButton
+                android:id="@+id/radioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/lightblue"
+                android:layout_marginStart="@dimen/_5sdp"
+                />
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/Name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:text="Kevin clark"
+            android:textColor="@color/black"
+            android:layout_marginStart="@dimen/_5sdp"
+            app:layout_constraintStart_toEndOf="@+id/radio"
+            app:layout_constraintTop_toTopOf="parent"
+            android:textSize="@dimen/_12sdp"
+            />
+
+        <TextView
+            android:id="@+id/tvAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:text="#12/45,Street no 4, Janakpuri phase 6"
+            app:layout_constraintStart_toEndOf="@+id/radio"
+            app:layout_constraintTop_toBottomOf="@+id/Name"
+            android:textSize="@dimen/_10sdp"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/grey"
+            app:layout_constraintTop_toBottomOf="@+id/tvAddress"
+            android:layout_marginTop="@dimen/_10sdp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

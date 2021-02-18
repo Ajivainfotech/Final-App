@@ -37,7 +37,10 @@ class HomeFrag:Fragment() {
 
     fun setToolbar(){
         Home.mainBinding.itemLayout.ivMenu.visibility=View.VISIBLE
-        Home.mainBinding.itemLayout.toolTitle.text="Dashboard"
+        Home.mainBinding.itemLayout.toolTitle.text=""
+        Home.mainBinding.itemLayout.ivSearch.visibility=View.VISIBLE
+        Home.mainBinding.itemLayout.tvLang.visibility=View.VISIBLE
+        Home.mainBinding.itemLayout.ivLogo.visibility=View.VISIBLE
         Home.mainBinding.itemLayout.ivSearch.visibility=View.VISIBLE
         Home.mainBinding.itemLayout.ivNotification.visibility=View.VISIBLE
         Home.mainBinding.itemLayout.ivBack.visibility=View.GONE

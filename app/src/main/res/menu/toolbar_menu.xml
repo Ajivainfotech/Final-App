@@ -1,4 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-
+    <item
+        android:id="@+id/English"
+        android:title="English" />
+    <item
+        android:id="@+id/Francais"
+        android:title="Francais"/>
+    <item
+        android:id="@+id/中国人"
+        android:title="中国人"/>
+    <item
+        android:id="@+id/Deutsch"
+        android:title="Deutsch(German)"/>
+    <item
+        android:id="@+id/Turk"
+        android:title="Turk"/>
+    <item
+        android:id="@+id/abbr"
+        android:title="ອາຣັບ"/>
+    <item
+        android:id="@+id/Espanola"
+        android:title="Espanola"/>
 </menu>

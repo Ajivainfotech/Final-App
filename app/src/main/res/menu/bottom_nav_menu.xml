@@ -3,35 +3,29 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_bottom_home"
-            android:title="Home"
-            style="@style/regular"
+            android:title=""
             android:icon="@drawable/home"
             android:iconTint="@color/colorPrimaryDark"
             android:visible="true" />
 
 
-
         <item
             android:id="@+id/nav_sell_cart"
-            android:icon="@drawable/ic_cart"
-            style="@style/regular"
+            android:icon="@drawable/ic_bag"
             android:iconTint="@color/colorPrimaryDark"
-            android:title="Sell" />
-
+            android:title="" />
 
         <item
             android:id="@+id/nav_bottom_cart"
-            android:icon="@drawable/ic_bag"
-            style="@style/regular"
+            android:icon="@drawable/ic_cart"
             android:iconTint="@color/colorPrimaryDark"
-            android:title="Cart" />
+            android:title="" />
 
         <item
             android:id="@+id/nav_bottom_profile"
             android:icon="@drawable/ic_user"
-            style="@style/regular"
             android:iconTint="@color/colorPrimaryDark"
-            android:title="Profile" />
+            android:title="" />
 
 
     </group>
